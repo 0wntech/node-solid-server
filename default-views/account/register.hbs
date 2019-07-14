@@ -6,19 +6,25 @@
   <title>Register</title>
   <link rel="stylesheet" href="/common/css/bootstrap.min.css">
   <link rel="stylesheet" href="/common/css/solid.css">
+  <link rel="stylesheet" href="/common/css/auth.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-
-  <div class="page-header">
-    <h1>Register</h1>
-  </div>
-
-  {{#if registerDisabled}}
-    {{> account/register-disabled}}
-  {{else}}
-    {{> account/register-form}}
-  {{/if}}
-</div>
-</body>
+<div class="container-fluid">
+  <div class="row visible-xs-inline visible-lg-block visible-md-block visible-sm-block">
+    <div class="col-sm-3 col-md-3 col-lg-4">
+    </div>
+    <div class="col-sm-6 col-md-6 col-lg-4 authContainer">
+      <div class="page-header header">
+        <h1>Register</h1>
+        <div class="logo">
+            <img src="https://owntech.de/favicon.ico"/>
+            <p>OWNTECH</p>
+          </div>
+      </div>
+      {{> account/register-form}}
+    </div>
+    <div class="col-sm-3 col-md-3 col-lg-4"></div>
+    </div>
+  </body>
 </html>

@@ -237,71 +237,6 @@ describe('ResourceMapper', () => {
         contentType: 'text/n3'
       })
 
-    itMapsUrl(mapper, 'a URL ending with a slash when index.html is available',
-      {
-        url: 'http://localhost/space/',
-        contentType: 'text/html'
-      },
-      [
-        `${rootPath}space/index.html`,
-        `${rootPath}space/index$.ttl`
-      ],
-      {
-        path: `${rootPath}space/index.html`,
-        contentType: 'text/html'
-      })
-
-    itMapsUrl(mapper, 'a URL ending with a slash when index.ttl is available',
-      {
-        url: 'http://localhost/space/'
-      },
-      [
-        `${rootPath}space/index.ttl`
-      ],
-      {
-        path: `${rootPath}space/`,
-        contentType: 'application/octet-stream'
-      })
-
-    itMapsUrl(mapper, 'a URL ending with a slash when index$.html is available',
-      {
-        url: 'http://localhost/space/'
-      },
-      [
-        `${rootPath}space/index$.html`,
-        `${rootPath}space/index$.ttl`
-      ],
-      {
-        path: `${rootPath}space/`,
-        contentType: 'application/octet-stream'
-      })
-
-    itMapsUrl(mapper, 'a URL ending with a slash when index$.ttl is available',
-      {
-        url: 'http://localhost/space/'
-      },
-      [
-        `${rootPath}space/index$.ttl`
-      ],
-      {
-        path: `${rootPath}space/`,
-        contentType: 'application/octet-stream'
-      })
-
-    itMapsUrl(mapper, 'a URL ending with a slash to a folder when index.html is available but index is skipped',
-      {
-        url: 'http://localhost/space/',
-        searchIndex: false
-      },
-      [
-        `${rootPath}space/index.html`,
-        `${rootPath}space/index$.ttl`
-      ],
-      {
-        path: `${rootPath}space/`,
-        contentType: 'application/octet-stream'
-      })
-
     itMapsUrl(mapper, 'a URL ending with a slash to a folder when no index is available',
       {
         url: 'http://localhost/space/'
@@ -346,18 +281,6 @@ describe('ResourceMapper', () => {
       {
         path: `${rootPath}space/index.html`,
         contentType: 'text/html'
-      })
-
-    itMapsUrl(mapper, 'a URL ending with a slash to a folder when index is skipped',
-      {
-        url: 'http://localhost/space/',
-        contentType: 'application/octet-stream',
-        createIfNotExists: true,
-        searchIndex: false
-      },
-      {
-        path: `${rootPath}space/`,
-        contentType: 'application/octet-stream'
       })
 
     itMapsUrl(mapper, 'a URL ending with a slash for text/turtle',

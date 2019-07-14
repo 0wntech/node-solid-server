@@ -1,0 +1,101 @@
+* {
+  font-family: "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+.grid {
+  padding: 40px 0;
+  min-height: 0;
+  display: grid;
+  height: 100%;
+  margin: 0 15% 0 15%;
+  grid-row-gap: 20px;
+  grid-template-areas: 'nav' 'main';
+  grid-template-rows: 80px 1fr;
+}
+
+.navArea {
+  grid-area: nav;
+  /* overflow: hidden;
+  min-width: 0; */
+  align-items: center;
+  display: flex;
+}
+
+.mainArea {
+  grid-area: main;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.navContainer {
+  z-index: 1;
+  background-color: white;
+  border-radius: 20px;
+  display: grid;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 2fr 7fr 3fr;
+  grid-template-areas: 'logo . dropdown';
+}
+
+.brandWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: logo;
+  height: 100%;
+}
+
+.brand {
+  height: 64px;
+  width: 64px;
+  cursor: pointer;
+}
+
+.menuWrapper {
+  grid-area: dropdown;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.loginButton a {
+  color: #0c89c6;
+  text-decoration: none;
+}
+
+.profileSection {
+    width: 66%;
+    display: flex;
+    align-items: center;
+}
+
+.profileIcon {
+    height: 64px;
+    width: 64px;
+    border: 5px solid #e5e5e5;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.username {
+    letter-spacing: 0.2em;
+    line-height: 21px;
+    font-size: 18px;
+    font-weight: 300;
+    font-style: normal;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}

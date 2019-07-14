@@ -1,12 +1,13 @@
 # Keep this in sync with .npmignore
 *.swp
 *~
+*.pem
 /.idea
 /.nyc_output
 /.tern-port
 /.db
-/accounts
 /config.json
+/accounts
 /config/account-template
 /config/email-templates
 /config/templates
@@ -15,3 +16,4 @@
 /coverage
 /node_modules
 /npm-debug.log
+/.vscode

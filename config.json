@@ -1,0 +1,24 @@
+{
+  "root": "./data",
+  "port": "443",
+  "serverUri": "https://owntech.de",
+  "webid": true,
+  "mount": "/",
+  "configPath": "./config",
+  "dbPath": "./.db",
+  "sslKey": "./privkey.pem",
+  "sslCert": "./fullchain.pem",
+  "multiuser": true,
+  "suppressDataBrowser": true,
+  "redirectHttpFrom": "80",
+  "corsProxy": "/proxy",
+  "server": {
+    "name": "",
+    "description": "",
+    "logo": ""
+  },
+  "enforceToc": false,
+  "disablePasswordChecks": false,
+  "tocUri": "https://your-toc",
+  "supportEmail": "Your support email address"
+}
