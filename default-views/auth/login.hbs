@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,38 +12,52 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
+
 <body>
-<div class="container-fluid">
-  <div class="row visible-xs-inline visible-lg-block visible-md-block visible-sm-block">
-    <div class="col-sm-3 col-md-3 col-lg-4">
-    </div>
-    <div class="col-sm-6 col-md-6 col-lg-4 authContainer">
-      <div class="page-header header">
-        <h1>Login</h1>
-        <div class="logo">
-          <img src="https://owntech.de/favicon.ico"/>
-          <p>OWNTECH</p>
-        </div>
+  <div class="container-fluid">
+    <div class="row visible-xs-inline visible-lg-block visible-md-block visible-sm-block">
+      <div class="col-sm-3 col-md-3 col-lg-4">
       </div>
-      {{> shared/error }}
-        {{> auth/login-username-password}}
-        <div class="visible-xs visible-sm visible-md visible-lg">
-          {{> shared/create-account }}
+      <div class="col-sm-6 col-md-6 col-lg-4 authContainer">
+        <div class="page-header header">
+          <h1>Login</h1>
+          <div class="logo">
+            <img src="https://owntech.de/favicon.ico" />
+            <p class="provider"></p>
+          </div>
         </div>
-    </div>
-    <div class="col-sm-3 col-md-3 col-lg-4">
+        {{> shared/error }}
+        {{> auth/login-username-password}}
+      </div>
+      <div class="col-sm-3 col-md-3 col-lg-4">
+      </div>
     </div>
   </div>
-</div>
-<script>
-  // Send return URL from localStorage to server through hidden redirect_uri field
-  var returnToUrl = localStorage.getItem('returnToUrl')
-  if (returnToUrl) {
-    for (let redirect of document.getElementsByName('redirect_uri')) {
-      redirect.value = returnToUrl
+  <script>
+    // Send return URL from localStorage to server through hidden redirect_uri field
+    var returnToUrl = localStorage.getItem('returnToUrl')
+    if (returnToUrl) {
+      for (let redirect of document.getElementsByName('redirect_uri')) {
+        redirect.value = returnToUrl
+      }
     }
-  }
-  localStorage.removeItem('returnToUrl')
-</script>
+    localStorage.removeItem('returnToUrl')
+
+    const locationUrl = location.href.split('/');
+    locationUrl.shift();
+    locationUrl.shift();
+
+    const providerFields = document.getElementsByClassName('provider')
+    const toRegisterFields = document.getElementsByClassName('to-register')
+    
+    for (var i = 0; i < providerFields.length; i++) {
+      providerFields[i].innerHTML = locationUrl[0].split('.')[0].toUpperCase();
+    }
+    
+    for (var i = 0; i < toRegisterFields.length; i++) {
+      toRegisterFields[i].innerHTML = "New to " + locationUrl[0].split('.')[0] + "?";
+    }
+  </script>
 </body>
+
 </html>

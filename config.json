@@ -1,7 +1,7 @@
 {
   "root": "./data",
   "port": "443",
-  "serverUri": "https://owntech.de",
+  "serverUri": "https://localhost",
   "webid": true,
   "mount": "/",
   "configPath": "./config",
