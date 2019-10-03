@@ -1,8 +1,10 @@
 * {
-  font-family: "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue",
+    Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -10,10 +12,9 @@ html, body {
   padding: 40px 0;
   min-height: 0;
   display: grid;
-  height: 100%;
   margin: 0 15% 0 15%;
   grid-row-gap: 20px;
-  grid-template-areas: 'nav' 'main';
+  grid-template-areas: "nav" "main";
   grid-template-rows: 80px 1fr;
 }
 
@@ -30,6 +31,25 @@ html, body {
   height: 100%;
   background-color: #ffffff;
   border-radius: 20px;
+  padding: 15px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+
+.lead {
+  margin: 10;
+  text-align: center;
+}
+
+.serverLogo {
+  margin: 10%;
+  width: 400px;
 }
 
 .navContainer {
@@ -40,31 +60,38 @@ html, body {
   align-items: center;
   width: 100%;
   height: 100%;
-  grid-template-columns: 2fr 7fr 3fr;
-  grid-template-areas: 'logo . dropdown';
+  grid-template-columns: 1fr 2fr 7fr 3fr 1fr;
+  grid-template-areas: ". logo . dropdown .";
 }
 
 .brandWrapper {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   grid-area: logo;
-  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "icon brand";
+  width: 100%;
+}
+
+.register {
+  margin-right: 0;
+}
+
+.login {
+  margin-right: 0;
+}
+
+.icon {
+  grid-area: icon;
+  width: 64px;
+  cursor: pointer;
+  padding: 10px;
 }
 
 .brand {
-  height: 64px;
-  width: 64px;
-  cursor: pointer;
-}
-
-.menuWrapper {
-  grid-area: dropdown;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+  grid-area: brand;
+  font-size: 2rem;
 }
 
 .loginButton a {
@@ -73,29 +100,31 @@ html, body {
 }
 
 .profileSection {
-    width: 66%;
-    display: flex;
-    align-items: center;
+  grid-area: dropdown;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .profileIcon {
-    height: 64px;
-    width: 64px;
-    border: 5px solid #e5e5e5;
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
-    cursor: pointer;
+  height: 64px;
+  width: 64px;
+  border: 5px solid #e5e5e5;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .username {
-    letter-spacing: 0.2em;
-    line-height: 21px;
-    font-size: 18px;
-    font-weight: 300;
-    font-style: normal;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  letter-spacing: 0.2em;
+  line-height: 21px;
+  font-size: 18px;
+  font-weight: 300;
+  font-style: normal;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

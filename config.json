@@ -13,9 +13,9 @@
   "redirectHttpFrom": "80",
   "corsProxy": "/proxy",
   "server": {
-    "name": "",
+    "name": "Owntech",
     "description": "",
-    "logo": ""
+    "logo": "./favicon.ico"
   },
   "enforceToc": false,
   "disablePasswordChecks": false,
