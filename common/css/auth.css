@@ -2,10 +2,10 @@
   background: #fff;
   border-radius: 20px;
   margin: 5% 0;
-}
-
-.page-header {
-  border-bottom: initial;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .panel {
@@ -58,18 +58,19 @@
   background-color: #fff;
   border-radius: 20px;
   padding: 3px 30px;
+  border: none;
   outline: none;
   cursor: pointer;
   float: right;
-  margin-right: 30px;
+  color: #fff;
 }
 
 .register {
-  border: solid #36c510 2px;
+  background: #36c510;
 }
 
 .login {
-  border: solid #2791ff 2px;
+  background: #2781ff;
 }
 
 .authButton:hover {
@@ -79,7 +80,7 @@
 }
 
 .register:hover {
-  background: #36a510;
+  background: #36b510;
 }
 
 .login:hover {

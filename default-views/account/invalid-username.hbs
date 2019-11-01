@@ -1,22 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Invalid username</title>
-  <link rel="stylesheet" href="/common/css/bootstrap.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to Solid</title>
+  <link rel="stylesheet" href="/common/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/common/css/solid.css" />
+  <link rel="stylesheet" href="/common/css/auth.css" />
+  <link rel="stylesheet" href="/common/css/main.css" />
 </head>
+
 <body>
-<div class="container">
-  <h4>Invalid username</h4>
-</div>
-<div class="container">
-  <p>We're sorry to inform you that this account's username ({{username}}) is not allowed after changes to username policy.</p>
-  <p>This account has been set to be deleted at {{dateOfRemoval}}.</p>
-  {{#if supportEmail}}
-  <p>Please contact {{supportEmail}} if you want to move your account.</p>
-  {{/if}}
-  <p>If you had an email address connected to this account, you should have received an email about this.</p>
-</div>
+  <div class="grid">
+    <div class="navArea">
+      <div class="brandWrapper">
+        <img onClick="location.href = 'https://owntech.de/'" class="icon" src="/favicon.ico" />
+        <div class="brand provider"></div>
+      </div>
+      <div class="profileSection">
+        <a href="/register" class="authButton register">Register</a>
+      </div>
+    </div>
+    <div class="mainArea">
+      <div class="main">
+        <p class="lead">
+          We're sorry to inform you that this account's username ({{username}}) is not allowed after changes to
+          username policy.
+          
+          This account has been set to be deleted at {{dateOfRemoval}}.
+          {{#if supportEmail}}
+          Please contact {{supportEmail}} if you want to move your account.
+          {{/if}}
+          If you had an email address connected to this account, you should have received an email about this.
+        </p>
+      </div>
+    </div>
+  </div>
+  <script src="/common/js/solid-auth-client.bundle.js"></script>
+  <script src="/common/js/rdflib.min.js"></script>
+  <script src="/common/js/main.js"></script>
 </body>
+
 </html>

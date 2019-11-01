@@ -151,15 +151,3 @@
     align-items: flex-end;
     justify-content: flex-end;
 }
-
-.submitButton {
-    padding: .3em 2em;
-    color: #fff;
-    background: #0CA9C6;
-    border-radius: 20px;
-}
-
-.submitButton:hover {
-    background: #0C89C6;
-    cursor: pointer;
-}
