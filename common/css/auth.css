@@ -1,11 +1,11 @@
-body {
-  background: #f4f4f4;
-}
-
 .authContainer {
   background: #fff;
   border-radius: 20px;
   margin: 5% 0;
+}
+
+.page-header {
+  border-bottom: initial;
 }
 
 .panel {
@@ -65,11 +65,11 @@ body {
 }
 
 .register {
-  border: solid #36a510 1px;
+  border: solid #36c510 2px;
 }
 
 .login {
-  border: solid #2771ff 1px;
+  border: solid #2791ff 2px;
 }
 
 .authButton:hover {
@@ -79,13 +79,11 @@ body {
 }
 
 .register:hover {
-  border: solid #fff 1px;
-  background-image: linear-gradient(to top, #36a510, rgba(54, 165, 16, 0.5));
+  background: #36a510;
 }
 
 .login:hover {
-  border: solid #fff 1px;
-  background-image: linear-gradient(to top, #2771ff, rgba(39, 113, 255, 0.5));
+  background: #2771ff;
 }
 
 .authButton:active {

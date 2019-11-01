@@ -1,34 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Log in</title>
-  <link rel="stylesheet" href="/common/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/common/css/solid.css">
-</head>
-<body>
-<div class="container">
-  <div class="page-header">
-    <div class="pull-right">
-      <button id="register" type="button" class="btn btn-primary">Register</button>
-      <button id="login"    type="button" class="btn btn-success">Log in</button>
-      <button id="logout"   type="button" class="hidden btn btn-danger">Log out</button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login required</title>
+    <link rel="stylesheet" href="common/css/solid.css" />
+    <link rel="stylesheet" href="common/css/main.css" />
+  </head>
+  <body>
+    <div class="grid">
+      <div class="navArea">
+        <div class="navContainer">
+          <div class="brandWrapper">
+            <img
+              onClick="location.href = 'https://owntech.de/'"
+              class="brand"
+              src="https://owntech.de/favicon.ico"
+            />
+          </div>
+          <div class="menuWrapper">
+            <div class="profileSection"></div>
+          </div>
+        </div>
+      </div>
+      <div class="mainArea">
+        <div class="messageWrapper">
+          Login to access 
+        </div>
+      </div>
     </div>
-    <h1>Log in to access this resource</h1>
-  </div>
-
-  <div class="alert alert-danger">
-    <p>
-      The resource you are trying to access
-      (<code>{{currentUrl}}</code>)
-      requires you to log in.
-    </p>
-  </div>
-
-</div>
-</div>
-<script src="/common/js/solid-auth-client.bundle.js"></script>
-<script src="/common/js/auth-buttons.js"></script>
-</body>
+    <script src="common/js/solid-auth-client.bundle.js"></script>
+    <script src="/auth-buttons.js"></script>
+    <script src="common/js/rdflib.min.js"></script>
+    <script> const webId = "{{webId}}";</script>
+    <script src="common/js/main.js"></script>
+  </body>
 </html>
