@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>No permission</title>
-    <link rel="stylesheet" href="/common/css/solid.css" />
-    <link rel="stylesheet" href="/common/css/main.css" />
-  </head>
-  <body style="background-color: #f4f4f4">
-    <div class="grid">
-      <div class="navArea">
-        <div class="navContainer">
-          <div class="brandWrapper">
-            <img
-              onClick="location.href = 'https://owntech.de/'"
-              class="brand"
-              src="https://owntech.de/favicon.ico"
-            />
-          </div>
-          <div class="menuWrapper">
-            <div class="profileSection"></div>
-          </div>
-        </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>No permission</title>
+  <link rel="stylesheet" href="/common/css/solid.css" />
+  <link rel="stylesheet" href="/common/css/main.css" />
+</head>
+
+<body style="background-color: #f4f4f4">
+  <div class="grid">
+    <div class="navArea">
+      <div class="brandWrapper">
+        <img onClick="location.href = 'https://owntech.de/'" class="brand" src="https://owntech.de/favicon.ico" />
       </div>
-      <div class="mainArea">
-        <div class="messageWrapper">
-          <p id="message"></p>
-        </div>
+      <div class="menuWrapper">
+        <div class="profileSection"></div>
       </div>
     </div>
-    <script src="common/js/solid-auth-client.bundle.js"></script>
-    <script src="/auth-buttons.js"></script>
-    <script src="common/js/rdflib.min.js"></script>
-    <script> const webId = "{{webId}}";</script>
-    <script src="common/js/main.js"></script>
-  </body>
+    <div class="mainArea">
+      <div class="messageWrapper">
+        <p id="message"></p>
+      </div>
+    </div>
+  </div>
+  <script src="common/js/solid-auth-client.bundle.js"></script>
+  <script src="/auth-buttons.js"></script>
+  <script src="common/js/rdflib.min.js"></script>
+  <script> const webId = "{{webId}}";</script>
+  <script src="common/js/main.js"></script>
+</body>
+
 </html>

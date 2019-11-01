@@ -14,15 +14,8 @@ html, body {
   margin: 0 15%;
   grid-row-gap: 20px;
   grid-template-areas: "nav" "main";
-  grid-template-rows: 82px 1fr;
-}
-
-.navArea {
-  grid-area: nav;
-  /* overflow: hidden;
-  min-width: 0; */
-  align-items: center;
-  display: flex;
+  grid-template-rows: 1fr 9fr;
+  height: 100%;
 }
 
 .mainArea {
@@ -51,7 +44,8 @@ html, body {
   width: 400px;
 }
 
-.navContainer {
+.navArea {
+  grid-area: nav;
   z-index: 1;
   background-color: white;
   border-radius: 20px;
