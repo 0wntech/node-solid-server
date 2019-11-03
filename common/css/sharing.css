@@ -1,6 +1,6 @@
 .mainArea {
     display: grid;
-    grid-template-rows: 7vh 8vh 2vh 13vh 5vh 21.5vh 5vh 5vh;
+    grid-template-rows: 12vh 10vh 2vh 14vh 5vh 12vh;
     grid-template-columns: 1fr 10fr 1fr;
     grid-template-areas: '. header .' '. message .' '. requests .' '. dataTypes .' '. specificRequest .' '. resources .' '. submit .' '. . .';
     grid-row-gap: 20px;
