@@ -39,234 +39,26 @@
       <div class="messageWrapper" style="grid-area: requests;">
         <div class="message">{{app_origin}} is requesting:</div>
       </div>
-      <div class="dataTypes" style="grid-area: dataTypes;">
-        <div class="dataType">
-          <div class="dataTypeIcon">
-            <svg viewBox="0 0 25 25" width="40" height="40" stroke="currentColor" stroke-width="2" fill="none"
-              stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-          </div>
-          <div class="dataTypeName">
-            Account Access
-          </div>
-        </div>
-        <div class="dataType">
-          <div class="dataTypeIcon">
-            <svg viewBox="0 0 25 25" width="40" height="40" stroke="currentColor" stroke-width="2" fill="none"
-              stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-          </div>
-          <div class="dataTypeName">
-            Account Access
-          </div>
-        </div>
-        <div class="dataType">
-          <div class="dataTypeIcon">
-            <svg viewBox="0 0 25 25" width="40" height="40" stroke="currentColor" stroke-width="2" fill="none"
-              stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-              <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-          </div>
-          <div class="dataTypeName">
-            Account Access
-          </div>
-        </div>
-      </div>
       <div class="messageWrapper" style="grid-area: specificRequest;">
         <div class="message">
           These are the specific resources and permissions {{app_origin}} would like to be given:
         </div>
       </div>
-      <div class="resources">
-        <div class="resource">
-          <div class="resourceDescription">
-            <div class="resourceIconWrapper">
-              <img class="resourceIcon" src="/common/img/Folder Icon.png" />
-            </div>
-            <div class="resourceName">ludwig.owntech.de</div>
-          </div>
-          <div class="accessModes">
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Read</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Write</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Control</div>
-            </div>
-          </div>
+      <div class="dataTypes" style="grid-area: dataTypes;"></div>
+      <form method="post" action="/sharing" style="grid-area: resources;">
+        <div class="resources"></div>
+        <div class="submit">
+          <button type="submit" name="consent" value="true" class="authButton login">Accept</submit>
         </div>
-        <div class="resource">
-          <div class="resourceDescription">
-            <div class="resourceIconWrapper">
-              <img class="resourceIcon" src="/common/img/File Icon.png" />
-            </div>
-            <div class="resourceName">profile/card</div>
-          </div>
-          <div class="accessModes">
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Read</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Write</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Control</div>
-            </div>
-          </div>
-        </div>
-        <div class="resource">
-          <div class="resourceDescription">
-            <div class="resourceIconWrapper">
-              <img class="resourceIcon" src="/common/img/Folder Icon.png" />
-            </div>
-            <div class="resourceName">ludwig.owntech.de</div>
-          </div>
-          <div class="accessModes">
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Read</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Write</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Control</div>
-            </div>
-          </div>
-        </div>
-        <div class="resource">
-          <div class="resourceDescription">
-            <div class="resourceIconWrapper">
-              <img class="resourceIcon" src="/common/img/File Icon.png" />
-            </div>
-            <div class="resourceName">profile/card</div>
-          </div>
-          <div class="accessModes">
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Read</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Write</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Control</div>
-            </div>
-          </div>
-        </div>
-        <div class="resource">
-          <div class="resourceDescription">
-            <div class="resourceIconWrapper">
-              <img class="resourceIcon" src="/common/img/Folder Icon.png" />
-            </div>
-            <div class="resourceName">ludwig.owntech.de</div>
-          </div>
-          <div class="accessModes">
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Read</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Write</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Control</div>
-            </div>
-          </div>
-        </div>
-        <div class="resource">
-          <div class="resourceDescription">
-            <div class="resourceIconWrapper">
-              <img class="resourceIcon" src="/common/img/File Icon.png" />
-            </div>
-            <div class="resourceName">profile/card</div>
-          </div>
-          <div class="accessModes">
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Read</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Write</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Control</div>
-            </div>
-          </div>
-        </div>
-        <div class="resource">
-          <div class="resourceDescription">
-            <div class="resourceIconWrapper">
-              <img class="resourceIcon" src="/common/img/Folder Icon.png" />
-            </div>
-            <div class="resourceName">ludwig.owntech.de</div>
-          </div>
-          <div class="accessModes">
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Read</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Write</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Control</div>
-            </div>
-          </div>
-        </div>
-        <div class="resource">
-          <div class="resourceDescription">
-            <div class="resourceIconWrapper">
-              <img class="resourceIcon" src="/common/img/File Icon.png" />
-            </div>
-            <div class="resourceName">profile/card</div>
-          </div>
-          <div class="accessModes">
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Read</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Write</div>
-            </div>
-            <div class="accessMode">
-              <input type="checkbox" class="accessOption" />
-              <div class="accessOptionName">Control</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="submit">
-        <div class="authButton login">Accept</div>
-      </div>
+      {{> auth/auth-hidden-fields}}
+      </form>
     </div>
   </div>
 </body>
-<script>const appOrigin = "{{ app_origin }}"</script>
+<script>
+  const webId = "{{ webId }}"
+  const access = JSON.parse(decodeURIComponent("{{ access }}"));
+</script>
 <script src="/common/js/solid-auth-client.bundle.js"></script>
 <script src="/common/js/rdflib.min.js"></script>
 <script src="/common/js/jquery-3.4.1.min.js"></script>
