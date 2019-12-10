@@ -50,14 +50,14 @@
         <div class="submit">
           <button type="submit" name="consent" value="true" class="authButton login">Accept</submit>
         </div>
-      {{> auth/auth-hidden-fields}}
+        {{> auth/auth-hidden-fields}}
       </form>
     </div>
   </div>
 </body>
 <script>
   const webId = "{{ webId }}"
-  const access = JSON.parse(decodeURIComponent("{{ access }}"));
+  const appOrigin = "{{ app_origin }}"
 </script>
 <script src="/common/js/solid-auth-client.bundle.js"></script>
 <script src="/common/js/rdflib.min.js"></script>
