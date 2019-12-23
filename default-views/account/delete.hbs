@@ -1,51 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Delete Account</title>
-  <link rel="stylesheet" href="/common/css/bootstrap.min.css">
-  <script></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delete account</title>
+  <link rel="stylesheet" href="/common/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/common/css/solid.css" />
+  <link rel="stylesheet" href="/common/css/auth.css" />
+  <link rel="stylesheet" href="/common/css/main.css" />
 </head>
+
 <body>
-<div class="container">
-  <h4>Delete Account</h4>
-</div>
-<div class="container">
-  <form method="post" action="/account/delete">
-    <div class="form-group">
-      {{#if error}}
-        <div class="row">
-          <div class="col-md-12">
-            <p class="text-danger"><strong>{{error}}</strong></p>
+  <div class="grid">
+    <div class="navArea">
+      <div class="brandWrapper">
+        <img onClick="location.href = 'https://owntech.de/'" class="icon" src="/favicon.ico" />
+        <div class="brand provider"></div>
+      </div>
+      <div class="profileSection">
+        <a href="/register" class="authButton register">Register</a>
+      </div>
+    </div>
+    <div class="mainArea">
+      <div class="main">
+        <form method="post" action="/account/delete">
+          <p class="lead">
+            {{#if multiuser}}
+            Please enter your account name. A delete account link will be
+            emailed to the address you provided during account registration.
+            {{else}}
+            A delete account link will be
+            emailed to the address you provided during account registration.
+            {{/if}}
+          </p>
+          <div class="form-group authFormGroup">
+            {{> shared/error}}
+            {{#if multiuser}}
+            <label for="username" class="authLabel">Account Name:</label>
+            <input type="text" name="username" id="username" placeholder="alice" />
+            {{/if}}
           </div>
-        </div>
-      {{/if}}
-      <div class="row">
-        <div class="col-md-12">
-          {{#if multiuser}}
-            <p>Please enter your account name. A delete account link will be
-              emailed to the address you provided during account registration.</p>
-
-            <label for="username">Account Name:</label>
-            <input type="text" class="form-control" name="username" id="username"
-                   placeholder="alice" />
-          {{else}}
-            <p>A delete account link will be
-              emailed to the address you provided during account registration.</p>
-          {{/if}}
-        </div>
+          <button type="submit" class="authButton login">Send Delete Account Link</button>
+        </form>
       </div>
     </div>
-
-    <div class="form-group">
-      <div class="row">
-        <div class="col-md-2">
-          <button type="submit" class="btn btn-primary">Send Delete Account Link</button>
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
+  </div>
+  <script src="/common/js/solid-auth-client.bundle.js">
+  </script>
+  <script src="/common/js/rdflib.min.js"></script>
+  <script src="/common/js/main.js"></script>
 </body>
+
 </html>

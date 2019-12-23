@@ -1,11 +1,11 @@
-body {
-  background: #f4f4f4;
-}
-
 .authContainer {
   background: #fff;
   border-radius: 20px;
   margin: 5% 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .panel {
@@ -57,19 +57,20 @@ body {
 .authButton {
   background-color: #fff;
   border-radius: 20px;
-  padding: 3px 30px;
+  padding: .3em 1.5em;
+  border: none;
   outline: none;
   cursor: pointer;
   float: right;
-  margin-right: 30px;
+  color: #fff;
 }
 
 .register {
-  border: solid #36a510 1px;
+  background: #36c510;
 }
 
 .login {
-  border: solid #2771ff 1px;
+  background: #2781ff;
 }
 
 .authButton:hover {
@@ -79,13 +80,11 @@ body {
 }
 
 .register:hover {
-  border: solid #fff 1px;
-  background-image: linear-gradient(to top, #36a510, rgba(54, 165, 16, 0.5));
+  background: #36b510;
 }
 
 .login:hover {
-  border: solid #fff 1px;
-  background-image: linear-gradient(to top, #2771ff, rgba(39, 113, 255, 0.5));
+  background: #2771ff;
 }
 
 .authButton:active {

@@ -1,17 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Delete Account Link Sent</title>
-  <link rel="stylesheet" href="/common/css/bootstrap.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Confirm account deletion</title>
+  <link rel="stylesheet" href="/common/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/common/css/solid.css" />
+  <link rel="stylesheet" href="/common/css/auth.css" />
+  <link rel="stylesheet" href="/common/css/main.css" />
 </head>
+
 <body>
-<div class="container">
-  <h4>Confirm account deletion</h4>
-</div>
-<div class="container">
-  <p>A link to confirm the deletion of this account has been sent to your email.</p>
-</div>
+  <div class="grid">
+    <div class="navArea">
+      <div class="brandWrapper">
+        <img onClick="location.href = 'https://owntech.de/'" class="icon" src="/favicon.ico" />
+        <div class="brand provider"></div>
+      </div>
+      <div class="profileSection">
+        <a href="/register" class="authButton register">Register</a>
+      </div>
+    </div>
+    <div class="mainArea">
+      <div class="main">
+        <p class="lead">A link to confirm the deletion of this account has been sent to your email.</p>
+      </div>
+    </div>
+  </div>
+  <script src="/common/js/solid-auth-client.bundle.js"></script>
+  <script src="/common/js/rdflib.min.js"></script>
+  <script src="/common/js/main.js"></script>
 </body>
+
 </html>

@@ -20,5 +20,14 @@
   "enforceToc": false,
   "disablePasswordChecks": false,
   "tocUri": "https://your-toc",
-  "supportEmail": "Your support email address"
+  "supportEmail": "Your support email address",
+  "email": {
+    "host": "email-smtp.eu-west-1.amazonaws.com",
+    "port": "587",
+    "auth": {
+      "user": "AKIASQ3MAPMQG6EZZ6OG",
+      "pass": "BOcCQXxatPyHhNHO6ytur24pujbBDBHZXJjXhIjIIr0E"
+    },
+    "sender": "admin@owntech.de" 
+  }
 }
