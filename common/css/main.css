@@ -97,7 +97,7 @@ body {
 
 .icon {
   grid-area: icon;
-  width: 64px;
+  width: 50px;
   cursor: pointer;
 }
 
