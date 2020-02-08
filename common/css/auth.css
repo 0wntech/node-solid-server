@@ -1,37 +1,35 @@
 .pageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
-  padding: 10% 30%;
+  padding: initial;
 }
 
 .authContainer {
   background: #fff;
   border-radius: 20px;
   border: solid #f4f4f4 2px;
+  padding: 1em;
+  width: 30%;
 }
 
 @media(max-width: 800px) {
-  .pageWrapper {
-    padding: 20%
+  .authContainer {
+    width: 50%;
   }
 }
 
 @media(max-width: 400px) {
-  .pageWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: initial;
-  }
-
   .authContainer {
     border: initial;
     border-radius: initial;
+    padding: initial
   }
-
   .form-group {
     margin: initial !important;
   }
-
   .pull-right {
     margin: initial !important;
     margin-bottom: 1em !important;
