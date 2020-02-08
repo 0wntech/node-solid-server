@@ -1,12 +1,10 @@
 * {
-  font-family: "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue",
-    Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: "Helvetica Neue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-html,
-body {
+html, body {
   height: 100%;
-  background: #f4f4f4;
+  background: #fff;
 }
 
 .grid {
@@ -25,6 +23,7 @@ body {
   height: 100%;
   background-color: #ffffff;
   border-radius: 20px;
+  border: solid #f4f4f4 2px;
   padding: 15px 20px;
   overflow-y: auto;
 }
@@ -168,6 +167,6 @@ body {
   border-color: #fff;
 }
 
-.alert  {
+.alert {
   margin-bottom: 0;
 }

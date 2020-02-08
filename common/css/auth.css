@@ -1,11 +1,41 @@
+.pageWrapper {
+  height: 100%;
+  padding: 10% 30%;
+}
+
 .authContainer {
   background: #fff;
   border-radius: 20px;
-  margin: 5% 0;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  border: solid #f4f4f4 2px;
+}
+
+@media(max-width: 800px) {
+  .pageWrapper {
+    padding: 20%
+  }
+}
+
+@media(max-width: 400px) {
+  .pageWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: initial;
+  }
+
+  .authContainer {
+    border: initial;
+    border-radius: initial;
+  }
+
+  .form-group {
+    margin: initial !important;
+  }
+
+  .pull-right {
+    margin: initial !important;
+    margin-bottom: 1em !important;
+  }
 }
 
 .panel {
@@ -26,26 +56,26 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 15px;
+  justify-content: space-between;
+  padding: 1em 1em 0 1em;
 }
 
 .logo {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: auto;
 }
 
 .logo img {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 2em;
+  max-height: 2em;
 }
 
 .logo p {
   margin: 0 5px;
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 300;
-  font-size: 3rem;
+  font-weight: 400;
+  font-size: 2rem;
 }
 
 .buttons {
@@ -63,6 +93,11 @@
   cursor: pointer;
   float: right;
   color: #fff;
+}
+
+.progress {
+  --webkit-box-shadow: initial;
+  box-shadow: initial;
 }
 
 .register {
@@ -106,14 +141,8 @@ input .control-progress {
 }
 
 label {
-  margin-bottom: 0;
+  margin-bottom: .5em;
   font-weight: 500;
-}
-
-.authFormGroup {
-  margin: 10px 20px 20px 20px;
-  display: flex;
-  align-items: center;
 }
 
 .pull-right {

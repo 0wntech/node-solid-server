@@ -15,23 +15,17 @@
 </head>
 
 <body>
-  <div class="container-fluid">
-    <div class="row visible-xs-inline visible-lg-block visible-md-block visible-sm-block">
-      <div class="col-sm-3 col-md-3 col-lg-4">
-      </div>
-      <div class="col-sm-6 col-md-6 col-lg-4 authContainer">
-        <div class="header">
-          <h1>Login</h1>
-          <div class="logo">
-            <img src="https://owntech.de/favicon.ico" />
-            <p class="provider"></p>
-          </div>
+  <div class="pageWrapper">
+    <div class="authContainer">
+      <div class="header">
+        <h1>Login</h1>
+        <div class="logo">
+          <img src="https://owntech.de/favicon.ico" />
+          <p class="provider"></p>
         </div>
-        {{> shared/error }}
-        {{> auth/login-username-password}}
       </div>
-      <div class="col-sm-3 col-md-3 col-lg-4">
-      </div>
+      {{> shared/error }}
+      {{> auth/login-username-password}}
     </div>
   </div>
   <script>
@@ -50,11 +44,11 @@
 
     const providerFields = document.getElementsByClassName('provider')
     const toRegisterFields = document.getElementsByClassName('to-register')
-    
+
     for (var i = 0; i < providerFields.length; i++) {
-      providerFields[i].innerHTML = locationUrl[0].split('.')[0].toUpperCase();
+      providerFields[i].innerHTML = locationUrl[0].split('.')[0].toLowerCase();
     }
-    
+
     for (var i = 0; i < toRegisterFields.length; i++) {
       toRegisterFields[i].innerHTML = "New to " + locationUrl[0].split('.')[0] + "?";
     }
