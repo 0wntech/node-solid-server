@@ -8,10 +8,8 @@ html, body {
 }
 
 .grid {
-  padding: 41px 0;
   min-height: 0;
   display: grid;
-  margin: 0 15%;
   grid-row-gap: 20px;
   grid-template-areas: "nav" "main";
   grid-template-rows: 80px 9fr;
@@ -23,7 +21,6 @@ html, body {
   height: 100%;
   background-color: #ffffff;
   border-radius: 20px;
-  border: solid #f4f4f4 2px;
   padding: 15px 20px;
   overflow-y: auto;
 }
@@ -32,7 +29,13 @@ html, body {
   height: 100%;
   overflow-y: auto;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scrollWrapper section {
+  margin-right: auto;
 }
 
 .main {
@@ -40,22 +43,18 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10% 10% 5% 10%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  padding: 0 10% 10% 10%;
+  height: 100%;
+  text-align: center;
+}
+
+.formContainer {
+  width: 30%;
 }
 
 .lead {
   margin: 10;
   text-align: center;
-}
-
-@media (max-width: 1250) {
-  .serverLogo {
-    width: 30%;
-  }
 }
 
 .serverLogo {
@@ -68,21 +67,17 @@ html, body {
   z-index: 1;
   background-color: white;
   border-radius: 20px;
-  display: grid;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
-  grid-template-columns: 1fr 2fr 7fr 3fr 1fr;
-  grid-template-areas: ". logo . dropdown .";
+  padding: 1em;
 }
 
 .brandWrapper {
   align-items: center;
-  justify-content: space-between;
-  grid-area: logo;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "icon brand";
+  display: flex;
   width: 100%;
 }
 
@@ -103,9 +98,8 @@ html, body {
 .brand {
   margin: 0 5px;
   font-family: "Source Sans Pro", sans-serif;
-  font-weight: 300;
-  font-size: 3rem;
-  height: 4rem;
+  font-weight: 400;
+  font-size: 2rem;
 }
 
 .loginButton a {
@@ -115,10 +109,9 @@ html, body {
 
 .profileSection {
   grid-area: dropdown;
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: end;
+  padding-right: 2em;
   height: 100%;
 }
 
@@ -169,4 +162,56 @@ html, body {
 
 .alert {
   margin-bottom: 0;
+}
+
+.actionButton {
+  margin: 1em 0;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: .3em 1.5em;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  float: right;
+  color: #fff;
+}
+
+.blue{
+  background: #2781ff;
+}
+
+.inputLabel {
+  float: left;
+}
+
+@media (max-width: 800px) {
+  .formContainer {
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    padding: initial;
+    margin: initial;
+  }
+  .navArea {
+    border: initial;
+  }
+
+  .profileSection {
+    padding-right: initial;
+  }
+
+  .mainArea {
+    border: initial;
+    padding: initial;
+  }
+  .scrollWrapper section {
+    padding: 1em;
+  }
+
+  .formContainer {
+    width: initial;
+  }
 }

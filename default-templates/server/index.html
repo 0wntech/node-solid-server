@@ -14,7 +14,7 @@
       <div class="navArea">
         <div class="brandWrapper">
           <img
-            onClick="location.href = 'https://owntech.de/'"
+            onClick="location.href = location.origin"
             class="icon"
             src="/favicon.ico"
           />
@@ -39,8 +39,6 @@
             <a href="#" id="profileLink"></a>.
           </p>
           <section>
-            {{#if serverLogo}}
-            {{/if}}
             <h2>Server info</h2>
             <dl>
               <dt>Name</dt>

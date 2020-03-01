@@ -16,23 +16,20 @@
 }
 
 @media(max-width: 800px) {
-  .authContainer {
+  .authContainer{
     width: 50%;
   }
 }
 
-@media(max-width: 400px) {
+@media(max-width: 500px) {
   .authContainer {
     border: initial;
     border-radius: initial;
-    padding: initial
+    padding: initial;
+    width: 100%;
   }
   .form-group {
     margin: initial !important;
-  }
-  .pull-right {
-    margin: initial !important;
-    margin-bottom: 1em !important;
   }
 }
 
@@ -98,6 +95,10 @@
   box-shadow: initial;
 }
 
+.pull-right {
+  margin: 0 0 1em auto;
+}
+
 .register {
   background: #36c510;
 }
@@ -141,14 +142,6 @@ input .control-progress {
 label {
   margin-bottom: .5em;
   font-weight: 500;
-}
-
-.pull-right {
-  margin: 0 30px 20px 0;
-}
-
-.pull-right a {
-  float: right !important;
 }
 
 .help-block {

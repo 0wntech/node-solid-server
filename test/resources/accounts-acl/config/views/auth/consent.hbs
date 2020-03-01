@@ -18,7 +18,7 @@
         <p><strong>If you don’t want to set these permissions at a global level, uncheck all of the boxes below, then click authorize.</strong> This will add the application origin to your authorization list, without granting it permission to any of your data yet. You will then need to manage those permissions yourself by setting them explicitly in the places you want this application to access.</p>
         <p>By clicking Authorize, any app from {{app_origin}} will be able to:</p>
       </div>
-      <form method="post" action="/sharing">
+      <form method="post" class="formContainer" action="/sharing">
 
         <input id="read" type="checkbox" name="access_mode" value="Read" checked>
         <label for="read">Read all documents in the Pod</label>
