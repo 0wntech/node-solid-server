@@ -36,16 +36,17 @@
           their source code or read their Terms and Conditions.
         </div>
       </div>
-      <div class="messageWrapper" style="grid-area: requests;">
-        <div class="message">{{app_origin}} is requesting:</div>
-      </div>
-      <div class="messageWrapper" style="grid-area: specificRequest;">
-        <div class="message">
-          These are the specific resources and permissions {{app_origin}} would like to be given:
+      <div class="dataTypes" style="grid-area: dataTypes;">
+        <div class="messageWrapper" style="grid-area: requests;">
+          <div class="message">{{app_origin}} is requesting:</div>
         </div>
       </div>
-      <div class="dataTypes" style="grid-area: dataTypes;"></div>
       <form method="post" class="formContainer" action="/sharing" style="grid-area: resources;">
+        <div class="messageWrapper" style="grid-area: specificRequest;">
+          <div class="message">
+            These are the specific resources and permissions {{app_origin}} would like to be given:
+          </div>
+        </div>
         <div class="resources"></div>
         <div class="submit">
           <button type="submit" name="consent" value="true" class="actionButton blue">Accept</submit>
