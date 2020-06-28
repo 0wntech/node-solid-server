@@ -150,3 +150,16 @@
     align-items: flex-end;
     justify-content: flex-end;
 }
+
+@media(max-width: 768px) {
+    .mainArea {
+        padding: 0 1em;
+        justify-content: flex-start;
+    }
+    .resources {
+        height: initial;
+    }
+    .resource {
+        flex-flow: row wrap;
+    }
+}
