@@ -106,7 +106,7 @@ describe('HTTP APIs', function () {
           .expect('Access-Control-Allow-Origin', 'http://example.com')
           .expect('Access-Control-Allow-Credentials', 'true')
           .expect('Access-Control-Allow-Methods', 'OPTIONS,HEAD,GET,PATCH,POST,PUT,DELETE')
-          .expect('Access-Control-Expose-Headers', 'Authorization, User, Location, Link, Vary, Last-Modified, ETag, Accept-Patch, Accept-Post, Updates-Via, Allow, WAC-Allow, Content-Length, WWW-Authenticate')
+          .expect('Access-Control-Expose-Headers', 'Authorization, User, Location, Link, Vary, Last-Modified, ETag, Accept-Patch, Accept-Post, Updates-Via, Allow, WAC-Allow, Content-Length, WWW-Authenticate, MS-Author-Via')
           .expect(204, done)
       })
 
@@ -379,6 +379,20 @@ describe('HTTP APIs', function () {
           .expect('content-type', /text\/html/)
           .end(done)
       })
+    it('should return turtle if requesting a conatiner that has index.html with conteent-type text/turtle', (done) => {
+      server.get('/sampleContainer/')
+        .set('accept', 'text/turtle')
+        .expect(200)
+        .expect('content-type', /text\/turtle/)
+        .end(done)
+    })
+    it('should return turtle if requesting a container that conatins an index.html file with a content type where some rdf format is ranked higher than html', (done) => {
+      server.get('/sampleContainer/')
+        .set('accept', 'image/*;q=0.9, */*;q=0.1, application/rdf+xml;q=0.9, application/xhtml+xml, text/xml;q=0.5, application/xml;q=0.5, text/html;q=0.9, text/plain;q=0.5, text/n3;q=1.0, text/turtle;q=1')
+        .expect(200)
+        .expect('content-type', /text\/turtle/)
+        .end(done)
+    })
     it('should still redirect to the right container URI if missing / and HTML is requested',
       function (done) {
         server.get('/sampleContainer')
@@ -467,6 +481,12 @@ describe('HTTP APIs', function () {
         .set('content-type', 'text/turtle')
         .expect(201, done)
     })
+    it('should reject create .acl resource, if contentType not text/turtle', function (done) {
+      server.put('/put-resource-1.acl')
+        .send(putRequestBody)
+        .set('content-type', 'text/plain')
+        .expect(415, done)
+    })
     it('should create directories if they do not exist', function (done) {
       server.put('/foo/bar/baz.ttl')
         .send(putRequestBody)
@@ -492,7 +512,8 @@ describe('HTTP APIs', function () {
       // Ensure all these are finished before running tests
       return Promise.all([
         rm('/false-file-48484848'),
-        createTestContainer('delete-test-empty-container'),
+//        createTestContainer('delete-test-empty-container'),
+        createTestResource('/delete-test-empty-container/test.txt.acl'),
         createTestResource('/put-resource-1.ttl'),
         createTestResource('/delete-test-non-empty/test.ttl')
       ])
@@ -514,7 +535,7 @@ describe('HTTP APIs', function () {
         .expect(409, done)
     })
 
-    it('should delete a new and empty container', function (done) {
+    it('should delete a new and empty container - with file.acl', function (done) {
       server.delete('/delete-test-empty-container/')
         .end(() => {
           server.get('/delete-test-empty-container/')
@@ -527,6 +548,7 @@ describe('HTTP APIs', function () {
       // Clean up after DELETE API tests
       rm('/put-resource-1.ttl')
       rm('/delete-test-non-empty/')
+      rm('/delete-test-empty-container/test.txt.acl')
       rm('/delete-test-empty-container/')
     })
   })
@@ -558,6 +580,34 @@ describe('HTTP APIs', function () {
         .expect(hasHeader('describedBy', suffixMeta))
         .expect(hasHeader('acl', suffixAcl))
         .expect(201, done)
+    })
+    it('should create new resource even if body is empty', function (done) {
+      server.post('/post-tests/')
+        .set('slug', 'post-resource-empty')
+        .set('content-type', 'text/turtle')
+        .expect(hasHeader('describedBy', suffixMeta))
+        .expect(hasHeader('acl', suffixAcl))
+        .expect('location', /.*\.ttl/)
+        .expect(201, done)
+    })
+    it('should error with 415 if the body is empty and no content type is provided', function (done) {
+      server.post('/post-tests/')
+        .set('slug', 'post-resource-empty-fail')
+        .expect(415, done)
+    })
+    it('should error with 415 if the body is provided but there is no content-type header', function (done) {
+      server.post('/post-tests/')
+        .set('slug', 'post-resource-rdf-no-content-type')
+        .send(postRequest1Body)
+        .set('content-type', '')
+        .expect(415, done)
+    })
+    it('should error with 415 if file.acl and contentType not text/turtle', function (done) {
+      server.post('/post-tests/')
+        .set('slug', 'post-acl-no-content-type.acl')
+        .send(postRequest1Body)
+        .set('content-type', '')
+        .expect(415, done)
     })
     it('should create new resource even if no trailing / is in the target',
       function (done) {

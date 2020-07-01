@@ -16,7 +16,7 @@
 }
 
 @media(max-width: 800px) {
-  .authContainer{
+  .authContainer {
     width: 50%;
   }
 }
@@ -30,6 +30,9 @@
   }
   .form-group {
     margin: initial !important;
+  }
+  .form-group+.form-group {
+    margin-top: 1em !important;
   }
 }
 
@@ -96,7 +99,7 @@
 }
 
 .pull-right {
-  margin: 0 0 1em auto;
+  margin: 1em 0 1em auto;
 }
 
 .register {

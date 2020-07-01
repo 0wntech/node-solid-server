@@ -14,12 +14,12 @@
  */
 function render (data) {
   return {
-    subject: 'Welcome to Solid',
+    subject: 'Welcome to owntech',
 
     /**
      * Text version of the Welcome email
      */
-    text: `Welcome to Solid!
+    text: `Welcome to owntech!
 
 Your account has been created.
 
@@ -28,7 +28,7 @@ Your Web Id: ${data.webid}`,
     /**
      * HTML version of the Welcome email
      */
-    html: `<p>Welcome to Solid!</p>
+    html: `<p>Welcome to owntech!</p>
 
 <p>Your account has been created.</p>
 
