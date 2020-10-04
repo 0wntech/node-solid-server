@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/common/css/solid.css">
   <link rel="stylesheet" href="/common/css/main.css">
   <link rel="stylesheet" href="/common/css/auth.css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
+
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
@@ -38,19 +38,15 @@
     }
     localStorage.removeItem('returnToUrl')
 
-    const locationUrl = location.href.split('/');
-    locationUrl.shift();
-    locationUrl.shift();
-
     const providerFields = document.getElementsByClassName('provider')
     const toRegisterFields = document.getElementsByClassName('to-register')
 
     for (var i = 0; i < providerFields.length; i++) {
-      providerFields[i].innerHTML = locationUrl[0].split('.')[0].toLowerCase();
+      providerFields[i].innerHTML = location.host;
     }
 
     for (var i = 0; i < toRegisterFields.length; i++) {
-      toRegisterFields[i].innerHTML = "New to " + locationUrl[0].split('.')[0] + "?";
+      toRegisterFields[i].innerHTML = "New to " + location.host;
     }
   </script>
 </body>

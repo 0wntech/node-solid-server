@@ -1,6 +1,6 @@
-.lead {
-    margin: 10%;
-    text-align: center;
+.lead  {
+  margin: 10%;
+  text-align: center;
 }
 
 label {
@@ -64,6 +64,7 @@ label {
 }
 
 .login-up-form .form-group {
+  margin: initial;
   margin-bottom: 5px;
 }
 

@@ -97,9 +97,8 @@ html, body {
 
 .brand {
   margin: 0 5px;
-  font-family: "Source Sans Pro", sans-serif;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 20px;
 }
 
 .loginButton a {

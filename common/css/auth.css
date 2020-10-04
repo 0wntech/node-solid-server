@@ -40,6 +40,11 @@
   border-radius: 20px;
 }
 
+.panel-body {
+  padding: initial;
+  padding-top: 16px;
+}
+
 .login-up-form {
   display: flex;
   flex-direction: column;
@@ -55,7 +60,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1em 1em 0 1em;
 }
 
 .logo {
@@ -135,6 +139,7 @@ input {
   border: none;
   background-color: #f4f4f4;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 input .control-progress {
