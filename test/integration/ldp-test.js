@@ -77,18 +77,18 @@ describe('LDP', function () {
 
   describe('getGraph', () => {
     it('should read and parse an existing file', () => {
-      let uri = 'https://localhost:8443/resources/sampleContainer/example1.ttl'
+      const uri = 'https://localhost:8443/resources/sampleContainer/example1.ttl'
       return ldp.getGraph(uri)
         .then(graph => {
           assert.ok(graph)
-          let fullname = $rdf.namedNode('http://example.org/stuff/1.0/fullname')
-          let match = graph.match(null, fullname)
+          const fullname = $rdf.namedNode('http://example.org/stuff/1.0/fullname')
+          const match = graph.match(null, fullname)
           assert.equal(match[0].object.value, 'Dave Beckett')
         })
     })
 
     it('should throw a 404 error on a non-existing file', (done) => {
-      let uri = 'https://localhost:8443/resources/nonexistent.ttl'
+      const uri = 'https://localhost:8443/resources/nonexistent.ttl'
       ldp.getGraph(uri)
         .catch(error => {
           assert.ok(error)
@@ -100,18 +100,18 @@ describe('LDP', function () {
 
   describe('putGraph', () => {
     it('should serialize and write a graph to a file', () => {
-      let originalResource = '/resources/sampleContainer/example1.ttl'
-      let newResource = '/resources/sampleContainer/example1-copy.ttl'
+      const originalResource = '/resources/sampleContainer/example1.ttl'
+      const newResource = '/resources/sampleContainer/example1-copy.ttl'
 
-      let uri = 'https://localhost:8443' + originalResource
+      const uri = 'https://localhost:8443' + originalResource
       return ldp.getGraph(uri)
         .then(graph => {
-          let newUri = 'https://localhost:8443' + newResource
+          const newUri = 'https://localhost:8443' + newResource
           return ldp.putGraph(graph, newUri)
         })
         .then(() => {
           // Graph serialized and written
-          let written = read('sampleContainer/example1-copy.ttl')
+          const written = read('sampleContainer/example1-copy.ttl')
           assert.ok(written)
         })
         // cleanup
@@ -177,12 +177,18 @@ describe('LDP', function () {
       return assert.isRejected(ldp.delete('/resources/testPut.txt'))
     })
 
-    it.skip('should delete a file in an existing dir', async () => {
+    it.skip('should delete a file with ACL in an existing dir', async () => {
       // First create a dummy file
       var stream = stringToStream('hello world')
       await ldp.put('/resources/testPut.txt', stream, 'text/plain')
+      await ldp.put('/resources/testPut.txt.acl', stream, 'text/turtle')
       // Make sure it exists
       fs.stat(ldp.resourceMapper._rootPath + '/resources/testPut.txt', function (err) {
+        if (err) {
+          throw err
+        }
+      })
+      fs.stat(ldp.resourceMapper._rootPath + '/resources/testPut.txt.acl', function (err) {
         if (err) {
           throw err
         }
@@ -192,6 +198,11 @@ describe('LDP', function () {
       await ldp.delete('/resources/testPut.txt')
       // Make sure it does not exist anymore
       fs.stat(ldp.resourceMapper._rootPath + '/resources/testPut.txt', function (err, s) {
+        if (!err) {
+          throw new Error('file still exists')
+        }
+      })
+      fs.stat(ldp.resourceMapper._rootPath + '/resources/testPut.txt.acl', function (err, s) {
         if (!err) {
           throw new Error('file still exists')
         }
@@ -309,7 +320,7 @@ describe('LDP', function () {
             )
             .map(d => { return d.uri })
 
-          let expectedStatements = [
+          const expectedStatements = [
             'http://www.w3.org/ns/iana/media-types/text/turtle#Resource',
             'http://www.w3.org/ns/ldp#Resource'
           ]

@@ -88,6 +88,9 @@ accidentally commit your certificates to `solid` while you're developing.
 
 If you would like to get rid of the browser warnings, import your fullchain.pem certificate into your 'Trusted Root Certificate' store.
 
+### Running Solid behind a reverse proxy (such as NGINX)
+See [Running Solid behind a reverse proxy](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy).
+
 ### Run multi-user server (intermediate)
 
 You can run `solid` so that new users can sign up, in other words, get their WebIDs _username.yourdomain.com_.
@@ -112,9 +115,6 @@ $ solid start --multiuser --port 8443 --ssl-cert /path/to/cert --ssl-key /path/t
 ```
 
 Your users will have a dedicated folder under `./data` at `./data/<username>.<yourdomain.tld>`. Also, your root domain's website will be in `./data/<yourdomain.tld>`. New users can create accounts on `/api/accounts/new` and create new certificates on `/api/accounts/cert`. An easy-to-use sign-up tool is found on `/api/accounts`.
-
-### Running Solid behind a reverse proxy (such as NGINX)
-See [Running Solid behind a reverse proxy](https://github.com/solid/node-solid-server/wiki/Running-Solid-behind-a-reverse-proxy).
 
 ##### How can I send emails to my users with my Gmail?
 
@@ -215,7 +215,7 @@ $ solid start --help
     --support-email [value]       The support email you provide for your users (not required)
     -q, --quiet                   Do not print the logs to console
     -h, --help                    output usage information
- ```
+```
 
 Instead of using flags, these same options can also be configured via environment variables taking the form of `SOLID_` followed by the `SNAKE_CASE` of the flag. For example `--api-apps` can be set via the `SOLID_API_APPS`environment variable, and `--serverUri` can be set with `SOLID_SERVER_URI`.
 
@@ -225,48 +225,51 @@ Configuring Solid via the config file can be a concise and convenient method and
 
 ## Use Docker
 
-Pull with:
+
+### Production usage
+
+See the [documentation to run Solid using docker and docker-compose](https://github.com/solid/node-solid-server/tree/master/docker-image).
+
+We have automatic builds set up, so commits to master will trigger a build of https://hub.docker.com/r/nodesolidserver/node-solid-server.
+
+### Development usage
+
+If you want to use Docker in development, then you can build it locally with:
 
 ```bash
-docker pull nodesolidserver/node-solid-server
+git clone https://github.com/solid/node-solid-server
+cd node-solid-server
+docker build -t node-solid-server .
 ```
 
 Run with:
 ```bash
-docker run -p 8443:8443 --name solid nodesolidserver/node-solid-server
+docker run -p 8443:8443 --name solid node-solid-server
 ```
 
 This will enable you to login to solid on https://localhost:8443 and then create a new account
 but not yet use that account. After a new account is made you will need to create an entry for 
 it in your local (/etc/)hosts file in line with the account and subdomain, i.e. --
+
 ```pre
 127.0.0.1	newsoliduser.localhost
 ```
-Then you'll be able to use solid as intended.
 
 You can modify the config within the docker container as follows:
 
- - Copy the config to the current directory with: 
-   ```
+ - Copy the `config.json` to the current directory with: 
+   ```bash
    docker cp solid:/usr/src/app/config.json .
    ```
  - Edit the `config.json` file
  - Copy the file back with 
-   ```
+   ```bash
    docker cp config.json solid:/usr/src/app/
    ```
  - Restart the server with 
-   ```
+   ```bash
    docker restart solid
    ```
-
-If you want to help improve the Docker image, then you can build it locally with:
-```bash
-git clone https://github.com/solid/node-solid-server
-cd node-solid-server
-docker build .
-```
-We have automatic builds set up, so commits to master will trigger a build of https://hub.docker.com/r/nodesolidserver/node-solid-server.
 
 ## Library Usage
 
